@@ -8,10 +8,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.HashMap;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -59,7 +59,7 @@ public class CustomerControllerTest {
 		when(customerServiceMock.getAllCustomers()).thenReturn(customerMap.values());
 		RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/customers");
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-		JSONAssert.assertEquals(expectedGetAllCustomersResponse, result.getResponse().getContentAsString(), false);
+		Assert.assertEquals(expectedGetAllCustomersResponse, result.getResponse().getContentAsString());
 	}
 
 	@Test
