@@ -3,7 +3,7 @@
 RESTful API that provides 3 operations
 
 API Doc Endpoint (Swagger)
-http://<hostname>:<port>/wagger-ui.html
+http://localhost:8080/swagger-ui.html
 
 • Operation 1: Add a Customer
   Method: POST
